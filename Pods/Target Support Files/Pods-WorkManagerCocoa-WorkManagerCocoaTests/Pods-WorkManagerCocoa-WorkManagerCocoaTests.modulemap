@@ -1,6 +1,0 @@
-framework module Pods_WorkManagerCocoa_WorkManagerCocoaTests {
-  umbrella header "Pods-WorkManagerCocoa-WorkManagerCocoaTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
