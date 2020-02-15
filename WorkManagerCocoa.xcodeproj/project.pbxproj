@@ -3,15 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D01264023F75D3F00134CBB /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01263F23F75D3F00134CBB /* Worker.swift */; };
+		3D01264223F75DA900134CBB /* WorkerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01264123F75DA900134CBB /* WorkerDelegate.swift */; };
+		3D01264423F75DCC00134CBB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01264323F75DCC00134CBB /* Result.swift */; };
+		3D01264623F75E0000134CBB /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01264523F75E0000134CBB /* RetryPolicy.swift */; };
+		3D01264823F75F2600134CBB /* WorkerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01264723F75F2600134CBB /* WorkerOptions.swift */; };
+		3D01264A23F761BD00134CBB /* WorkerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01264923F761BD00134CBB /* WorkerManager.swift */; };
+		3D01264C23F764B000134CBB /* RxWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01264B23F764B000134CBB /* RxWorker.swift */; };
+		3D01264E23F7697600134CBB /* CountDownLetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01264D23F7697600134CBB /* CountDownLetch.swift */; };
+		3D01265023F769C500134CBB /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01264F23F769C500134CBB /* Lock.swift */; };
+		3D01265223F769DC00134CBB /* SpinLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01265123F769DC00134CBB /* SpinLock.swift */; };
+		3D01265423F769F800134CBB /* AtomicProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01265323F769F800134CBB /* AtomicProperty.swift */; };
 		7066D56423D3740700F794F1 /* WorkManagerCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7066D55A23D3740700F794F1 /* WorkManagerCocoa.framework */; };
 		7066D56923D3740700F794F1 /* WorkManagerCocoaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D56823D3740700F794F1 /* WorkManagerCocoaTests.swift */; };
 		7066D56B23D3740700F794F1 /* WorkManagerCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 7066D55D23D3740700F794F1 /* WorkManagerCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7069ADBA23DDC3C1009F5407 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069ADB923DDC3C1009F5407 /* Job.swift */; };
-		7069ADBC23DDC40B009F5407 /* JobParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069ADBB23DDC40B009F5407 /* JobParams.swift */; };
 		D870561CF1B0929C5A367F36 /* Pods_WorkManagerCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6A6840D69CB573D991B26 /* Pods_WorkManagerCocoa.framework */; };
 		D9893078F5F986735B98E7C8 /* Pods_WorkManagerCocoa_WorkManagerCocoaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6A5E1CFF582F9F136DB044 /* Pods_WorkManagerCocoa_WorkManagerCocoaTests.framework */; };
 /* End PBXBuildFile section */
@@ -27,6 +36,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D01263F23F75D3F00134CBB /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
+		3D01264123F75DA900134CBB /* WorkerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerDelegate.swift; sourceTree = "<group>"; };
+		3D01264323F75DCC00134CBB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		3D01264523F75E0000134CBB /* RetryPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryPolicy.swift; sourceTree = "<group>"; };
+		3D01264723F75F2600134CBB /* WorkerOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerOptions.swift; sourceTree = "<group>"; };
+		3D01264923F761BD00134CBB /* WorkerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerManager.swift; sourceTree = "<group>"; };
+		3D01264B23F764B000134CBB /* RxWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWorker.swift; sourceTree = "<group>"; };
+		3D01264D23F7697600134CBB /* CountDownLetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownLetch.swift; sourceTree = "<group>"; };
+		3D01264F23F769C500134CBB /* Lock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
+		3D01265123F769DC00134CBB /* SpinLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinLock.swift; sourceTree = "<group>"; };
+		3D01265323F769F800134CBB /* AtomicProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicProperty.swift; sourceTree = "<group>"; };
 		5066A5F35603AA1E9320C9A5 /* Pods-WorkManagerCocoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkManagerCocoa.release.xcconfig"; path = "Target Support Files/Pods-WorkManagerCocoa/Pods-WorkManagerCocoa.release.xcconfig"; sourceTree = "<group>"; };
 		61E6A6840D69CB573D991B26 /* Pods_WorkManagerCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkManagerCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7066D55A23D3740700F794F1 /* WorkManagerCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WorkManagerCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,8 +55,6 @@
 		7066D56323D3740700F794F1 /* WorkManagerCocoaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkManagerCocoaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7066D56823D3740700F794F1 /* WorkManagerCocoaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkManagerCocoaTests.swift; sourceTree = "<group>"; };
 		7066D56A23D3740700F794F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7069ADB923DDC3C1009F5407 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
-		7069ADBB23DDC40B009F5407 /* JobParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobParams.swift; sourceTree = "<group>"; };
 		9A6A5E1CFF582F9F136DB044 /* Pods_WorkManagerCocoa_WorkManagerCocoaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkManagerCocoa_WorkManagerCocoaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29B6DABB4BD0813A1E50186 /* Pods-WorkManagerCocoa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkManagerCocoa.debug.xcconfig"; path = "Target Support Files/Pods-WorkManagerCocoa/Pods-WorkManagerCocoa.debug.xcconfig"; sourceTree = "<group>"; };
 		D8A0063ABA9957C5F90961FA /* Pods-WorkManagerCocoa-WorkManagerCocoaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkManagerCocoa-WorkManagerCocoaTests.debug.xcconfig"; path = "Target Support Files/Pods-WorkManagerCocoa-WorkManagerCocoaTests/Pods-WorkManagerCocoa-WorkManagerCocoaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,8 +107,17 @@
 			children = (
 				7066D55D23D3740700F794F1 /* WorkManagerCocoa.h */,
 				7066D55E23D3740700F794F1 /* Info.plist */,
-				7069ADB923DDC3C1009F5407 /* Job.swift */,
-				7069ADBB23DDC40B009F5407 /* JobParams.swift */,
+				3D01263F23F75D3F00134CBB /* Worker.swift */,
+				3D01264123F75DA900134CBB /* WorkerDelegate.swift */,
+				3D01264323F75DCC00134CBB /* Result.swift */,
+				3D01264523F75E0000134CBB /* RetryPolicy.swift */,
+				3D01264723F75F2600134CBB /* WorkerOptions.swift */,
+				3D01264923F761BD00134CBB /* WorkerManager.swift */,
+				3D01264B23F764B000134CBB /* RxWorker.swift */,
+				3D01264D23F7697600134CBB /* CountDownLetch.swift */,
+				3D01264F23F769C500134CBB /* Lock.swift */,
+				3D01265123F769DC00134CBB /* SpinLock.swift */,
+				3D01265323F769F800134CBB /* AtomicProperty.swift */,
 			);
 			path = WorkManagerCocoa;
 			sourceTree = "<group>";
@@ -165,6 +192,7 @@
 				7066D55F23D3740700F794F1 /* Sources */,
 				7066D56023D3740700F794F1 /* Frameworks */,
 				7066D56123D3740700F794F1 /* Resources */,
+				6EC22101ACA141F5474B0F38 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,7 +216,7 @@
 				TargetAttributes = {
 					7066D55923D3740700F794F1 = {
 						CreatedOnToolsVersion = 11.2.1;
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1130;
 					};
 					7066D56223D3740700F794F1 = {
 						CreatedOnToolsVersion = 11.2.1;
@@ -276,6 +304,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6EC22101ACA141F5474B0F38 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WorkManagerCocoa-WorkManagerCocoaTests/Pods-WorkManagerCocoa-WorkManagerCocoaTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WorkManagerCocoa-WorkManagerCocoaTests/Pods-WorkManagerCocoa-WorkManagerCocoaTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WorkManagerCocoa-WorkManagerCocoaTests/Pods-WorkManagerCocoa-WorkManagerCocoaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -283,8 +328,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7069ADBA23DDC3C1009F5407 /* Job.swift in Sources */,
-				7069ADBC23DDC40B009F5407 /* JobParams.swift in Sources */,
+				3D01265223F769DC00134CBB /* SpinLock.swift in Sources */,
+				3D01264E23F7697600134CBB /* CountDownLetch.swift in Sources */,
+				3D01264423F75DCC00134CBB /* Result.swift in Sources */,
+				3D01264C23F764B000134CBB /* RxWorker.swift in Sources */,
+				3D01264223F75DA900134CBB /* WorkerDelegate.swift in Sources */,
+				3D01265023F769C500134CBB /* Lock.swift in Sources */,
+				3D01264623F75E0000134CBB /* RetryPolicy.swift in Sources */,
+				3D01265423F769F800134CBB /* AtomicProperty.swift in Sources */,
+				3D01264823F75F2600134CBB /* WorkerOptions.swift in Sources */,
+				3D01264023F75D3F00134CBB /* Worker.swift in Sources */,
+				3D01264A23F761BD00134CBB /* WorkerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,9 @@ target 'WorkManagerCocoa' do
 
   # Pods for WorkManagerCocoa
 
+	pod 'RxSwift'
+ 	
+
   target 'WorkManagerCocoaTests' do
     # Pods for testing
   end
