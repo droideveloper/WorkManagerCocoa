@@ -11,13 +11,12 @@
 		3D01264223F75DA900134CBB /* WorkerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01264123F75DA900134CBB /* WorkerDelegate.swift */; };
 		3D01264423F75DCC00134CBB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01264323F75DCC00134CBB /* Result.swift */; };
 		3D01264623F75E0000134CBB /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01264523F75E0000134CBB /* RetryPolicy.swift */; };
-		3D01264823F75F2600134CBB /* WorkerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01264723F75F2600134CBB /* WorkerOptions.swift */; };
 		3D01264A23F761BD00134CBB /* WorkerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01264923F761BD00134CBB /* WorkerManager.swift */; };
-		3D01264C23F764B000134CBB /* RxWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01264B23F764B000134CBB /* RxWorker.swift */; };
 		3D01264E23F7697600134CBB /* CountDownLetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01264D23F7697600134CBB /* CountDownLetch.swift */; };
 		3D01265023F769C500134CBB /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01264F23F769C500134CBB /* Lock.swift */; };
 		3D01265223F769DC00134CBB /* SpinLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01265123F769DC00134CBB /* SpinLock.swift */; };
 		3D01265423F769F800134CBB /* AtomicProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01265323F769F800134CBB /* AtomicProperty.swift */; };
+		3DDEA818245C56A400932532 /* RxWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDEA817245C56A400932532 /* RxWorker.swift */; };
 		7066D56423D3740700F794F1 /* WorkManagerCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7066D55A23D3740700F794F1 /* WorkManagerCocoa.framework */; };
 		7066D56923D3740700F794F1 /* WorkManagerCocoaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D56823D3740700F794F1 /* WorkManagerCocoaTests.swift */; };
 		7066D56B23D3740700F794F1 /* WorkManagerCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 7066D55D23D3740700F794F1 /* WorkManagerCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -40,13 +39,12 @@
 		3D01264123F75DA900134CBB /* WorkerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerDelegate.swift; sourceTree = "<group>"; };
 		3D01264323F75DCC00134CBB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3D01264523F75E0000134CBB /* RetryPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryPolicy.swift; sourceTree = "<group>"; };
-		3D01264723F75F2600134CBB /* WorkerOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerOptions.swift; sourceTree = "<group>"; };
 		3D01264923F761BD00134CBB /* WorkerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerManager.swift; sourceTree = "<group>"; };
-		3D01264B23F764B000134CBB /* RxWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWorker.swift; sourceTree = "<group>"; };
 		3D01264D23F7697600134CBB /* CountDownLetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownLetch.swift; sourceTree = "<group>"; };
 		3D01264F23F769C500134CBB /* Lock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 		3D01265123F769DC00134CBB /* SpinLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinLock.swift; sourceTree = "<group>"; };
 		3D01265323F769F800134CBB /* AtomicProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicProperty.swift; sourceTree = "<group>"; };
+		3DDEA817245C56A400932532 /* RxWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxWorker.swift; sourceTree = "<group>"; };
 		5066A5F35603AA1E9320C9A5 /* Pods-WorkManagerCocoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkManagerCocoa.release.xcconfig"; path = "Target Support Files/Pods-WorkManagerCocoa/Pods-WorkManagerCocoa.release.xcconfig"; sourceTree = "<group>"; };
 		61E6A6840D69CB573D991B26 /* Pods_WorkManagerCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkManagerCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7066D55A23D3740700F794F1 /* WorkManagerCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WorkManagerCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,13 +109,12 @@
 				3D01264123F75DA900134CBB /* WorkerDelegate.swift */,
 				3D01264323F75DCC00134CBB /* Result.swift */,
 				3D01264523F75E0000134CBB /* RetryPolicy.swift */,
-				3D01264723F75F2600134CBB /* WorkerOptions.swift */,
 				3D01264923F761BD00134CBB /* WorkerManager.swift */,
-				3D01264B23F764B000134CBB /* RxWorker.swift */,
 				3D01264D23F7697600134CBB /* CountDownLetch.swift */,
 				3D01264F23F769C500134CBB /* Lock.swift */,
 				3D01265123F769DC00134CBB /* SpinLock.swift */,
 				3D01265323F769F800134CBB /* AtomicProperty.swift */,
+				3DDEA817245C56A400932532 /* RxWorker.swift */,
 			);
 			path = WorkManagerCocoa;
 			sourceTree = "<group>";
@@ -331,12 +328,11 @@
 				3D01265223F769DC00134CBB /* SpinLock.swift in Sources */,
 				3D01264E23F7697600134CBB /* CountDownLetch.swift in Sources */,
 				3D01264423F75DCC00134CBB /* Result.swift in Sources */,
-				3D01264C23F764B000134CBB /* RxWorker.swift in Sources */,
+				3DDEA818245C56A400932532 /* RxWorker.swift in Sources */,
 				3D01264223F75DA900134CBB /* WorkerDelegate.swift in Sources */,
 				3D01265023F769C500134CBB /* Lock.swift in Sources */,
 				3D01264623F75E0000134CBB /* RetryPolicy.swift in Sources */,
 				3D01265423F769F800134CBB /* AtomicProperty.swift in Sources */,
-				3D01264823F75F2600134CBB /* WorkerOptions.swift in Sources */,
 				3D01264023F75D3F00134CBB /* Worker.swift in Sources */,
 				3D01264A23F761BD00134CBB /* WorkerManager.swift in Sources */,
 			);

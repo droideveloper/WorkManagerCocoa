@@ -8,24 +8,66 @@
 
 import Foundation
 
-open class Worker: Operation {
+open class Worker<T>: Operation {
 	
-	private let delegate: WorkerDelegate
+  private var delegates = Array<WorkerDelegate>()
+	private let lock = SpinLock()
+  
+  public init(_ delegate: WorkerDelegate? = nil) {
+    if let delegate = delegate {
+      self.delegates.append(delegate)
+    }
+  }
 	
-	public init(_ delegate: WorkerDelegate) {
-		self.delegate = delegate
-	}
-	
-	open override func main() {
+	public override func main() {
 		do {
-			let result = try createWork()
-			delegate.onComplete(result)
+      let result: Result<T> = try createWork()
+      dispatchResult(result)
 		} catch let error {
-			delegate.onComplete(.error(error))
+      let result = Result<T>.error(error)
+      dispatchResult(result)
 		}
 	}
 	
-	open func createWork() throws -> Result {
-		return .success
+	open func createWork<T>() throws -> Result<T> {
+		return .success(nil)
 	}
+  
+  public func  registerDelegate(_ delegate: WorkerDelegate) {
+    lock.hold()
+    let index = delegates.firstIndex { search in
+      return search === delegate
+    }
+    if index == nil {
+      delegates.append(delegate)
+    }
+    lock.release()
+  }
+  
+  public func unregisterDelegate(_ delegate: WorkerDelegate) {
+    lock.hold()
+    let index = delegates.firstIndex { search in
+      return search === delegate
+    }
+    if let index = index {
+      delegates.remove(at: index)
+    }
+    lock.release()
+  }
+
+  public func dispatchResult<T>(_ result: Result<T>) {
+    lock.hold()
+    for delegate in delegates {
+      delegate.complete(result)
+    }
+    lock.release()
+  }
+  
+  public func dispatchProgress(_ progress: Float) {
+    lock.hold()
+    for delegate in delegates {
+      delegate.progress(progress)
+    }
+    lock.release()
+  }
 }
