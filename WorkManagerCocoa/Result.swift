@@ -8,8 +8,8 @@
 
 import Foundation
 
-public enum Result {
-	case success
+public enum Result<T> {
+	case success(T?)
 	case error(Error)
 	case retry(RetryPolicy)
 }

@@ -2,46 +2,49 @@
 //  RxWorker.swift
 //  WorkManagerCocoa
 //
-//  Created by Fatih Şen on 15.02.2020.
+//  Created by Fatih Sen on 1.05.2020.
 //  Copyright © 2020 Fatih Sen. All rights reserved.
 //
 
 import Foundation
 import RxSwift
 
-open class RxWorker: Operation {
-	
-	private let delegate: WorkerDelegate
-	
-	private var disposable = Disposables.create()
-	
-	public init(_ delegate: WorkerDelegate) {
-		self.delegate = delegate
-	}
-	
-	open override func main() {
-		let letch = CountDownLatch(count: 1)
-		do {
-			disposable = try createWork().subscribe { [weak self] event in
-				switch event {
-					case .next(let result): self?.delegate.onComplete(result)
-					case .error(let error): self?.delegate.onComplete(.error(error))
-					case .completed: self?.delegate.onComplete(.success)
-				}
-				letch.countDown()
-			}
-		} catch let error {
-			delegate.onComplete(.error(error))
-			letch.countDown()
-		}
-		letch.await()
-	}
-	
-	open func createWork() throws -> Observable<Result> {
-		return .just(.success)
-	}
-	
-	deinit {
-		disposable.dispose()
-	}
+open class RxWorker<T>: Operation {
+  
+  private let delegate: WorkerDelegate
+  
+  private var disposable = Disposables.create()
+  
+  public init(_ delegate: WorkerDelegate) {
+    self.delegate = delegate
+  }
+  
+  open override func main() {
+    let letch = CountDownLatch(count: 1)
+    do {
+      disposable = try createWork().subscribe { [weak self] (event: Event<Result<T>>) in
+        switch event {
+          case .next(let result): self?.delegate.onComplete(result)
+          case .error(let error): self?.delegate.onComplete(Result<T>.error(error))
+          case .completed: break
+        }
+      }
+    } catch let error {
+      let e = Result<T>.error(error)
+      delegate.onComplete(e)
+    }
+    letch.await()
+  }
+  
+  open func createWork<T>() throws -> Observable<Result<T>> {
+    return .just(Result<T>.success(nil))
+  }
+  
+  public func dispatchProgress(progress: Float) {
+    delegate.onProgress(progress: progress)
+  }
+  
+  deinit {
+    disposable.dispose()
+  }
 }

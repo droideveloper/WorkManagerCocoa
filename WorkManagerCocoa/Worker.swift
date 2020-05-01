@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class Worker: Operation {
+open class Worker<T>: Operation {
 	
 	private let delegate: WorkerDelegate
 	
@@ -18,14 +18,20 @@ open class Worker: Operation {
 	
 	open override func main() {
 		do {
-			let result = try createWork()
+      let result: Result<T> = try createWork()
 			delegate.onComplete(result)
 		} catch let error {
-			delegate.onComplete(.error(error))
+      let e = Result<T>.error(error)
+			delegate.onComplete(e)
 		}
 	}
 	
-	open func createWork() throws -> Result {
-		return .success
+	open func createWork<T>() throws -> Result<T> {
+		return .success(nil)
 	}
+  
+  // if you want to dispatch any sort of progress go with this 
+  open func dispatchProgress(progress: Float) {
+    delegate.onProgress(progress: progress)
+  }
 }
