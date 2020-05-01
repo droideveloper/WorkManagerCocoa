@@ -10,5 +10,12 @@ import Foundation
 
 public protocol WorkerDelegate {
 	
-	func onComplete(_ result: Result)
+	func onComplete<T>(_ result: Result<T>)
+}
+
+public extension WorkerDelegate {
+  
+  func onProgress(progress: Float) {
+    // we do have default implementation for making it optional
+  }
 }

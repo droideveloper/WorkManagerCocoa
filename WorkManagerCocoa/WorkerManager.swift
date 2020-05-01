@@ -10,17 +10,13 @@ import Foundation
 
 public class WorkerManager: OperationQueue {
 		
-	public init(_ max: Int, _ name: String? = nil) {
+	public init(_ max: Int = 1, _ name: String? = nil) {
 		super.init()
 		self.maxConcurrentOperationCount = max
 		self.name = name
 	}
 	
-	public func enqueu(_ worker: Worker) {
-		addOperation(worker)
-	}
-
-	public func enqueu(_ worker: RxWorker) {
+	public func enqueu<T>(_ worker: Worker<T>) {
 		addOperation(worker)
 	}
 }
