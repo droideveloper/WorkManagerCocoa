@@ -29,7 +29,7 @@ open class Worker<T>: Operation {
 		}
 	}
 	
-	open func createWork<T>() throws -> Result<T> {
+	open func createWork() throws -> Result<T> {
 		return .success(nil)
 	}
   
@@ -55,7 +55,7 @@ open class Worker<T>: Operation {
     lock.release()
   }
 
-  public func dispatchResult<T>(_ result: Result<T>) {
+  public func dispatchResult(_ result: Result<T>) {
     lock.hold()
     for delegate in delegates {
       delegate.complete(result)
