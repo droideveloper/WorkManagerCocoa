@@ -42,7 +42,7 @@ open class RxWorker<T>: Operation {
     letch.await()
   }
   
-  open func createWork<T>() throws -> Observable<Result<T>> {
+  open func createWork() throws -> Observable<Result<T>> {
     return .just(Result<T>.success(nil))
   }
   
@@ -76,7 +76,7 @@ open class RxWorker<T>: Operation {
     lock.release()
   }
   
-  public func dispatchResult<T>(_ result: Result<T>) {
+  public func dispatchResult(_ result: Result<T>) {
     lock.hold()
     for delegate in delegates {
       delegate.complete(result)
