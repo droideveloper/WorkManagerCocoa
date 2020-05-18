@@ -10,7 +10,7 @@ import Foundation
 
 open class Worker<T>: Operation {
 	
-  private var delegates = Array<WorkerDelegate>()
+  var delegates = Array<WorkerDelegate>()
 	private let lock = SpinLock()
   
   public init(_ delegate: WorkerDelegate? = nil) {
