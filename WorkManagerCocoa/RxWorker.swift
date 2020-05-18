@@ -9,17 +9,14 @@
 import Foundation
 import RxSwift
 
-open class RxWorker<T>: Operation {
+open class RxWorker<T>: Worker<T> {
   
   private let lock = SpinLock()
   
   private var disposable = Disposables.create()
-  private var delegates = Array<WorkerDelegate>()
   
-  public init(_ delegate: WorkerDelegate? = nil) {
-    if let delegate = delegate {
-      self.delegates.append(delegate)
-    }
+  public override init(_ delegate: WorkerDelegate? = nil) {
+    super.init(delegate)
   }
   
   public override func main() {
@@ -44,44 +41,6 @@ open class RxWorker<T>: Operation {
   
   open func createWork() throws -> Observable<Result<T>> {
     return .just(Result<T>.success(nil))
-  }
-  
-  public func  registerDelegate(_ delegate: WorkerDelegate) {
-    lock.hold()
-    let index = delegates.firstIndex { search in
-      return search === delegate
-    }
-    if index == nil {
-      delegates.append(delegate)
-    }
-    lock.release()
-  }
-  
-  public func unregisterDelegate(_ delegate: WorkerDelegate) {
-    lock.hold()
-    let index = delegates.firstIndex { search in
-      return search === delegate
-    }
-    if let index = index {
-      delegates.remove(at: index)
-    }
-    lock.release()
-  }
-  
-  public func dispatchProgress(progress: Float) {
-    lock.hold()
-    for delegate in delegates {
-      delegate.progress(progress)
-    }
-    lock.release()
-  }
-  
-  public func dispatchResult(_ result: Result<T>) {
-    lock.hold()
-    for delegate in delegates {
-      delegate.complete(result)
-    }
-    lock.release()
   }
   
   deinit {
