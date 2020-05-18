@@ -16,6 +16,10 @@ public class WorkerManager: OperationQueue {
   
   private let lock = SpinLock()
   
+  public static let shared: WorkerManager = {
+    return WorkerManager() // we create defaults
+  }()
+  
   public init(_ maxConcurrent: Int = 2, _ name: String = String(describing: WorkerManager.self)) {
 		super.init()
 		self.maxConcurrentOperationCount = maxConcurrent
